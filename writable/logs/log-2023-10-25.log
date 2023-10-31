@@ -1,0 +1,147 @@
+CRITICAL - 2023-10-25 23:31:07 --> Call to a member function findAll() on null
+in APPPATH\Controllers\Admin.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+ERROR - 2023-10-25 23:32:04 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\app\Controllers\Admin.php(17): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+#8 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\app\Controllers\Admin.php(17): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+#7 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\mcarl\OneDrive\Escritorio\ADOPCION_MASCOTAS\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\...')
+#11 {main}
+CRITICAL - 2023-10-25 23:32:04 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `raza`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Admin.php(17): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:34:16 --> Undefined property: stdClass::$raza
+in APPPATH\Views\admin\mostrarMascota.php on line 17.
+ 1 APPPATH\Views\admin\mostrarMascota.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$raza', 'C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarMascota.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarMascota.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/mostrarMascota', [], true)
+ 5 APPPATH\Controllers\Admin.php(29): view('admin/mostrarMascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:36:26 --> Undefined property: stdClass::$raza
+in APPPATH\Views\admin\mostrarMascota.php on line 17.
+ 1 APPPATH\Views\admin\mostrarMascota.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$raza', 'C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarMascota.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarMascota.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/mostrarMascota', [], true)
+ 5 APPPATH\Controllers\Admin.php(29): view('admin/mostrarMascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:39:03 --> Undefined property: stdClass::$raza
+in APPPATH\Views\admin\mostrarMascota.php on line 17.
+ 1 APPPATH\Views\admin\mostrarMascota.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$raza', 'C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarMascota.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarMascota.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/mostrarMascota', [], true)
+ 5 APPPATH\Controllers\Admin.php(29): view('admin/mostrarMascota', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:43:03 --> Call to undefined method App\Models\MascotaModel::with
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Admin.php(26): CodeIgniter\Model->__call('with', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:43:53 --> Call to undefined method App\Models\MascotaModel::getRaza
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Admin.php(30): CodeIgniter\Model->__call('getRaza', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarMascota()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:45:16 --> Undefined array key "idRaza"
+in APPPATH\Controllers\Admin.php on line 125.
+ 1 APPPATH\Controllers\Admin.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idRaza"', 'C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Controllers\\Admin.php', 125)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->updateM()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:45:34 --> Undefined property: stdClass::$apeliidoM
+in APPPATH\Views\admin\mostrarAdoptador.php on line 16.
+ 1 APPPATH\Views\admin\mostrarAdoptador.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$apeliidoM', 'C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarAdoptador.php', 16)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarAdoptador.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/mostrarAdoptador', [], true)
+ 5 APPPATH\Controllers\Admin.php(144): view('admin/mostrarAdoptador', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarAdoptador()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:45:51 --> Undefined property: stdClass::$edad
+in APPPATH\Views\admin\mostrarAdoptador.php on line 17.
+ 1 APPPATH\Views\admin\mostrarAdoptador.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$edad', 'C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarAdoptador.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarAdoptador.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/mostrarAdoptador', [], true)
+ 5 APPPATH\Controllers\Admin.php(144): view('admin/mostrarAdoptador', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarAdoptador()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
+CRITICAL - 2023-10-25 23:46:16 --> Undefined property: stdClass::$nombreAlimento
+in APPPATH\Views\admin\mostrarDieta.php on line 17.
+ 1 APPPATH\Views\admin\mostrarDieta.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nombreAlimento', 'C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarDieta.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\app\\Views\\admin\\mostrarDieta.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('admin/mostrarDieta', [], true)
+ 5 APPPATH\Controllers\Admin.php(216): view('admin/mostrarDieta', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->mostrarDieta()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\mcarl\\OneDrive\\Escritorio\\ADOPCION_MASCOTAS\\public\\index.php')
